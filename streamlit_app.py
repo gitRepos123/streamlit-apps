@@ -14,7 +14,7 @@ def dispatch_action(loc):
         st.write(f"Altitude: { location.altitude }")
         st.write(f"Point: { location.point }") 
         st.write(f"Longitude: { location.longitude }, Latitude: { location.latitude }")  
-        st.map(data = pd.DataFrame({ 'lat': location.latitude, 'lon': location.longitude }), size = 20.0, color = "green")
+        st.map(data = pd.DataFrame({ 'lat': [ location.latitude ], 'lon': [ location.longitude ] }), size = 20.0, color = "green")
 
 def init_app_geocoder():
     with st.form("input-form", clear_on_submit=True, border=True):
