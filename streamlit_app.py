@@ -6,11 +6,13 @@ st.header('Information Zone')
 
 def dispatch_action(loc):
     global locator
+    st.header('Search Result')
     location = locator.geocode(loc)
-    st.write(f"Address: { location.address }") 
-    st.write(f"Altitude: { location.altitude }")
-    st.write(f"Point: { location.point }") 
-    st.write(f"Longitude: { location.longitude }, Latitude: { location.latitude }")    
+    if location != None:
+        st.write(f"Address: { location.address }") 
+        st.write(f"Altitude: { location.altitude }")
+        st.write(f"Point: { location.point }") 
+        st.write(f"Longitude: { location.longitude }, Latitude: { location.latitude }")    
 
 def init_app_geocoder():
     with st.form("input-form", clear_on_submit=True, border=True):
@@ -20,5 +22,4 @@ def init_app_geocoder():
         if submitted: 
             dispatch_action(loc)
 
-st.header('Search Result')
 init_app_geocoder()
