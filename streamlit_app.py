@@ -13,7 +13,7 @@ def dispatch_action(loc):
         st.write(f"Altitude: { location.altitude }")
         st.write(f"Point: { location.point }") 
         st.write(f"Longitude: { location.longitude }, Latitude: { location.latitude }")  
-        st.map(latitude = location.latitude, longitude = location.longitude, size = 2)
+        st.map(latitude = location.latitude, longitude = location.longitude, size = 2, color = "green")
 
 def init_app_geocoder():
     with st.form("input-form", clear_on_submit=True, border=True):
