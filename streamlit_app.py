@@ -2,8 +2,9 @@ from geopy.geocoders import Nominatim
 import streamlit as st
 import pandas as pd
 
+st.title("GeoPin Application")
 locator = Nominatim(user_agent = 'geocoder-dev-2024')
-st.header('Information Zone')
+st.header("GeoPin")
 
 def dispatch_action(loc):
     global locator
